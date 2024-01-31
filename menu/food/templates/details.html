@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block start %}
+<div class="card mb-3">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="..." class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{item_detail.item_name}}</h5>
+        <p class="card-text">{{item_detail.item_desc}}</p>
+        <p class="card-text"><small class="text-body-secondary">Price: {{item_detail.item_price}}</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
