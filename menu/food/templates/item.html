@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 {% block start %}
 <div class="mb-4 text-end">
-    <a href="" class="btn btn-outline-primary">Add New</a>
+    <a href="{% url 'food:add' %}" class="btn btn-outline-primary">Add New</a>
 </div>
 <table class="table table-condensed">
     <thead>
     <tr>
+        <th></th>
         <th>Name</th>
         <th>Description</th>
         <th>Price</th>
@@ -15,6 +16,9 @@
     <tbody>
     {% for item in item_list %}
     <tr>
+        <td>
+            <img src="{{ item.item_image }}" width="70" alt="{{ item.item_name }}" />
+        </td>
         <td>
             {{ item.item_name }}
         </td>
