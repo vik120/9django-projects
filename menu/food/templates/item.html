@@ -16,22 +16,22 @@
     <tbody>
     {% for item in item_list %}
     <tr>
-        <td>
+        <td width="10%">
             <img src="{{ item.item_image }}" width="70" alt="{{ item.item_name }}" />
         </td>
-        <td>
+        <td width="10%">
             {{ item.item_name }}
         </td>
-        <td>
+        <td width="45%">
             {{ item.item_desc }}
         </td>
-        <td>
+        <td width="10%">
             {{ item.item_price }}
         </td>
-        <td>
+        <td width="15%">
             <a href="{% url 'food:details' item.id %}" class="btn btn-sm btn-primary" role="link">view</a>
-            <a href="" class="btn btn-sm btn-secondary">Edit</a>
-            <a href="" class="btn btn-sm btn-danger">Delete</a>
+            <a href="{% url 'food:update' item.id %}" class="btn btn-sm btn-secondary">Edit</a>
+            <a href="{% url 'food:delete' item.id %}" class="btn btn-sm btn-danger">Delete</a>
         </td>
     </tr>
     {% endfor %}
