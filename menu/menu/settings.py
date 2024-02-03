@@ -40,7 +40,8 @@ INSTALLED_APPS = [
 ]
 
 EXTERNAL_APPS = [
-    'food.apps.FoodConfig'
+    'food.apps.FoodConfig',
+    'users.apps.UsersConfig'
 ]
 
 INSTALLED_APPS += EXTERNAL_APPS
