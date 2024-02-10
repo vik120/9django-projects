@@ -1,9 +1,18 @@
-from django.shortcuts import render
 from django.contrib.auth.forms import UserCreationForm
+from django.http import HttpResponse
+from django.template import loader
+from django.shortcuts import render, redirect
+from django.contrib import messages
 
-from . import  views
 # Create your views here.
 
 def register(request):
-    form = UserCreationForm
-    return render(request, views.register, context={'form': form})
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            messages.success(request, f'congrats {username}, you are successfully register')
+            return  redirect('food:index')
+    else:
+        form = UserCreationForm
+        return render(request, 'register.html', context={'form': form})
