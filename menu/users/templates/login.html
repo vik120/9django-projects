@@ -1,5 +1,36 @@
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button   type="submit">Login</button>
-</form>
+{% extends "base.html" %}
+
+{% block start %}
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                Login
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+<!--                    {{ form.as_p }}-->
+                    {% for field in form %}
+                    <div class="form-group mb-3">
+                        <label>{{field.name}}</label>
+                        <div class="">{{field}}</div>
+                    </div>
+                    {% endfor %}
+                    <button class="btn btn-primary" type="submit">Login</button>
+                </form>
+            </div>
+            <div class="card-footer">
+                <p>Don't have any account? <a href="{% url 'users:register' %}">Register Now</a></p>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="col-md-4">
+
+    </div>
+</div>
+{% endblock %}
+

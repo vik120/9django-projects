@@ -3,16 +3,16 @@
 <div class="card mb-3">
   <div class="row g-0">
     <div class="col-md-4">
-      <img src="{{item_detail.item_image}}" class="img-fluid rounded-start" alt="...">
+      <img src="{{object.item_image}}" class="img-fluid rounded-start" alt="...">
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title">{{item_detail.item_name}}</h5>
-        <p class="card-text">{{item_detail.item_desc}}</p>
-        <p class="card-text"><small class="text-body-secondary">Price: {{item_detail.item_price}}</small></p>
+        <h5 class="card-title">{{object.item_name}}</h5>
+        <p class="card-text">{{object.item_desc}}</p>
+        <p class="card-text"><small class="text-body-secondary">Price: {{object.item_price}}</small></p>
         <div>
-          <a href="{% url 'food:update' item_detail.id %}" class="btn btn-sm btn-info">Edit</a>
-          <a href="{% url 'food:delete' item_detail.id %}" class="btn btn-sm btn-danger">Delete</a>
+          <a href="{% url 'food:update' object.id %}" class="btn btn-sm btn-info">Edit</a>
+          <a href="{% url 'food:delete' object.id %}" class="btn btn-sm btn-danger">Delete</a>
         </div>
       </div>
     </div>
