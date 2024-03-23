@@ -27,5 +27,6 @@ router.register('action', ActionViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(router.urls))
+    path('', include(router.urls)),
+    path('list/', include('movies.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

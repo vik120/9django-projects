@@ -8,8 +8,8 @@
     <tr>
         <th></th>
         <th>Name</th>
-        <th>Description</th>
-        <th>Price</th>
+        <th>Rating</th>
+        <th>Movie Type</th>
         <th>Actions</th>
     </tr>
     </thead>
@@ -17,16 +17,16 @@
     {% for item in item_list %}
     <tr>
         <td width="10%">
-            <img src="{{ item.item_image }}" width="70" alt="{{ item.item_name }}" />
+            <img src="{{ item.banner }}" width="70" alt="{{ item.name }}" />
         </td>
         <td width="10%">
-            {{ item.item_name }}
+            {{ item.name }}
         </td>
         <td width="45%">
-            {{ item.item_desc }}
+            {{ item.rating }}
         </td>
         <td width="10%">
-            {{ item.item_price }}
+            {{ item.movie_type }}
         </td>
         <td width="15%">
             <a href="{% url 'food:details' item.id %}" class="btn btn-sm btn-primary" role="link">view</a>
